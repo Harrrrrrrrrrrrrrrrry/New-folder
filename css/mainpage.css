@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+.btn {
+    border: none;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}

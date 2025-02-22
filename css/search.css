@@ -1,0 +1,22 @@
+.img-wrapper {
+    max-height: 8vw;
+    width: 100%;
+    display: flex;
+}
+
+.card {
+    background-color: rgb(50, 50, 50);
+    max-height: 9vw;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 0;
+    border-top: solid gray 1px;
+}
+
+.card-title {
+    margin: 2px 0;
+}
+
+.card-text {
+    margin: 0;
+}

@@ -1,0 +1,23 @@
+.anime-container {
+    max-width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.anime-info {
+    flex: 1;
+}
+
+.anime-synopsis {
+    flex: 2;
+    max-width: 60%;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
