@@ -3,7 +3,18 @@ window.handleSignOut = () => {
     location.reload();
 };
 
-// Fetch current season anime
+let index = 0;
+const visibleItems = 5;
+function moveSlide(direction) {
+    const track = document.getElementById('track');
+    const totalItems = document.querySelectorAll('.active-carousel-item').length;
+    const maxIndex = totalItems - visibleItems;
+    index += direction;
+    if (index < 0) index = maxIndex;
+    if (index > maxIndex) index = 0;
+    track.style.transform = `translateX(-${index * 20}%)`;
+}
+
 const fetchSeasonAnime = () => {
     const baseUrl = 'https://api.jikan.moe/v4/seasons/now';
     fetch(baseUrl)
@@ -14,14 +25,11 @@ const fetchSeasonAnime = () => {
             return response.json();
         })
         .then(data => {
-            const resultsDiv = document.getElementById('anime-results');
+            const resultsDiv = document.getElementById('track');
             for (let i = 0; i < data.data.length; i++) {
                 const anime = data.data[i];
                 const animeCard = document.createElement('div');
-                animeCard.classList.add('col-md-2', 'mb-3', 'carousel-item');
-                if (i == 0) {
-                    animeCard.classList.add('active');
-                }
+                animeCard.classList.add('col-md-2', 'mb-3', 'carousel-item', 'active-carousel-item');
                 animeCard.innerHTML = `
                     <a href="info.html?id=${anime.mal_id}" class="text-decoration-none text-light">
                         <div class="card">

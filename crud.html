@@ -9,7 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./css/mainpage.css">
-    <link rel="stylesheet" href="./css/info.css">
+    <link rel="stylesheet" href="./css/crud.css">
 </head>
 
 <body>
@@ -17,9 +17,9 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Jikan</a>
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="./index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                     <a class="nav-link" href="./search.html">Search</a>
                     <a class="nav-link" href="./crud.html">Watch List</a>
                 </div>
@@ -30,20 +30,14 @@
         </div>
     </nav>
 
-    <div class="anime-container">
-        <h1 id="anime-title">Loading...</h1>
-        <div class="layer-2">
-            <div class="anime-info">
-
-                <img id="anime-image" src="" alt="Anime Image">
-                <p><strong>Episodes:</strong> <span id="anime-episodes"></span></p>
-                <p><strong>Score:</strong> <span id="anime-score"></span></p>
-                <p><strong>Genres:</strong> <span id="anime-genres"></span></p>
-                <p><strong>Themes:</strong> <span id="anime-themes"></span></p>
-                <button class="btn btn-primary" onclick="addItemtoWatchList()">Add to Watch List</button>
-            </div>
-            <div class="anime-synopsis">
-                <p><strong>Synopsis:</strong> <span id="anime-synopsis"></span></p>
+    <!-- Main -->
+    <div class="container mt-4">
+        <h1>Watch List</h1>
+        <div class="item-list" id="watch-list">
+            <div class="row table-column">
+                <h5 class="col-md-1 item-column" id="item-id">ID</h5>
+                <h5 class="col-md-9 item-column" id="item-title">Title</h5>
+                <h5 class="col-md-2 item-column" id="item-actions">Actions</h5>
             </div>
         </div>
     </div>
@@ -63,7 +57,7 @@
         </div>
     </footer>
 
-    <script src="./js/info.js"></script>
+    <script src="./js/crud.js"></script>
     <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="0N74vC8h-62kffKY3WgQi";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
         </script>

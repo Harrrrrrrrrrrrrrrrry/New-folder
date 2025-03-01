@@ -1,6 +1,5 @@
 window.handleSignOut = () => {
     localStorage.removeItem("currentUser");
-    localStorage.removeItem("cart");
     location.reload();
 };
 
